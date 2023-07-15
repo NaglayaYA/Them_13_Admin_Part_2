@@ -1,0 +1,13 @@
+<?php
+
+/** @var \Perspective\Category\Block\Template $block */
+$viewModel = $block->getData('view_model');
+$CategoryCollection = $viewModel->getCategoriesByIds();
+if ($CategoryCollection->getTotalCount()) {
+    foreach ($CategoryCollection->getItems() as $category){
+        var_dump($category->getName());
+    }
+}
+         ?>
+    
+ 

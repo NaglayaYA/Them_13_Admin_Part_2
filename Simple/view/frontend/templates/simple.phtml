@@ -1,0 +1,8 @@
+<?php
+/** @var \Perspective\Simple\Block\Template $block */
+$viewModel = $block->getData('view_model');
+?>
+<?php foreach ($viewModel->getProductByLetter() as $Letter) : ?>
+    <h2> <?= $Letter->getName(); ?> </h2>
+    <h3> <?= round($Letter->getPrice(), 2) . '$'; ?> </h3>
+<?php endforeach; ?>
