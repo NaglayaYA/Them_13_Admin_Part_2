@@ -1,0 +1,79 @@
+<?php
+
+/** @var \Perspective\Them5ex2\Block\Template $block */
+$viewModel = $block->getData('view_model');
+
+// 5.2.1
+
+/**$id = 2042;
+$_productStock = $viewModel->getStockItem($id);
+echo '<b>Id:</b> ' . $_productStock->getId(); echo '<br />';
+echo '<b>Qty:</b> ' . $_productStock->getQty(); echo '<br />';
+echo '<b>MinQty:</b> ' . $_productStock->getMinQty(); echo '<br />';
+echo '<b>MinSaleQty:</b> ' . $_productStock->getMinSaleQty(); echo '<br />';
+echo '<b>MaxSaleQty:</b> ' . $_productStock->getMaxSaleQty(); echo '<br />';
+echo '<b>IsInStock:</b> ' . $_productStock->getIsInStock(); echo '<br />';
+ */
+
+// 5.2.2
+
+/**$id = 2042;
+$productimage = $viewModel->getProductImageUrl($id);
+echo "URL картинки: " . $productimage. "<br>";
+echo "Ширина картинки: " . $viewModel->getImageOriginalWidth($id, 'product_page_image_medium') . '<br />'; 
+echo "Высота картинки: " . $viewModel->getImageOriginalHeight($id, 'product_page_image_medium') . '<br />';
+ */
+
+// 5.2.3 
+
+/**$customerCollection = $viewModel->getCustomerCollection();
+ 
+if ($customerCollection && count($customerCollection) > 0) {
+    foreach ($customerCollection AS $customer) {
+        echo var_dump ($customer->getData());
+    }
+}*/
+
+// 5.2.4
+
+/**$ordersCollection = $viewModel->getOrderCollection();
+if ($ordersCollection && count($ordersCollection) > 0) {
+    foreach ($ordersCollection AS $orders) {
+        echo "<hr>";
+        echo "Статус заказа: " . $orders->getStatus()."<br/>";
+        echo "Номер заказа: " . $orders->getEntity_id()."<br/>";        
+        echo "Сумма доставки: " . round($orders->getShipping_amount(), 2) . "$" ."<br/>";
+        echo "Сумма заказа: " . round($orders->getTotal_paid(), 2) . "$" ."<br/>";
+        echo "<br>";
+        echo "Почта заказчика: " . $orders->getCustomer_email()."<br/>";
+        echo "Имя заказчика: " . $orders->getCustomer_firstname()."<br/>";
+        echo "Фамилия заказчика: " . $orders->getCustomer_lastname()."<br/>";
+        echo "ID заказчика: " . $orders->getCustomer_id()."<br/>";
+    }
+}*/
+
+// 5.2.5
+
+/**$customerGroupCollection = $viewModel->getCustomerGroups();
+
+foreach ($customerGroupCollection AS $customerGroup) {
+    echo "<b>Название группы:</b> " . array_values($customerGroup)[1];
+    echo "<br>";
+}*/
+
+// 5.2.6
+
+/**$payments = $viewModel->getAllPaymentMethodsList();
+
+foreach ($payments as $payment) {
+    echo ($payment);
+    echo "<br>";
+}*/
+
+// 5.2.7
+$allShipping = $viewModel->getAllShippingMethods();
+foreach ($allShipping as $shipping) {
+
+    echo ($shipping['label']);
+    echo "<br>";
+}
