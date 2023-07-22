@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
-    <router id="standard">
-        <route id="them5ex1" frontName="them5ex1">
-            <module name="Perspective_Them5ex1" />
-        </route>
-    </router>
-</config>

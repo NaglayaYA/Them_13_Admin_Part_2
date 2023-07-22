@@ -1,0 +1,12 @@
+<?php
+/** @var \Perspective\TutorialProductPage\Block\Custom $block */
+
+$viewModel = $block->getData('view_model');?>
+<?php if ($viewModel->isAvailable()): ?>
+    <h1>
+        Test Custom
+    </h1>
+    <h2>
+        <?= $viewModel->getAnyCustomValue(); ?>
+    </h2>
+<?php endif; ?>
