@@ -1,0 +1,16 @@
+<?php
+/** @var \Perspective\Them7ex3\Block\Template $block */
+
+$viewModel = $block->getData('view_model');
+$customerId = $viewModel->getCustomerId();
+//echo ($customerId);
+ $wishlistCollection = $viewModel->getWishlistByCustomerId($customerId);
+if(count($wishlistCollection)) {
+    foreach ($wishlistCollection as $item) { 
+    echo '<b>Название продукта: </b>' . $item->getProduct()->getName() . '<br>';
+    echo '<b>Id: </b>' . $item->getProduct()->getId() . '<br>';
+    echo '<b>Sku: </b>' . $item->getProduct()->getSku() . '<br>';
+    echo '<b>Цена: </b>' . round($item->getProduct()->getPrice(),2) . '$' .'<br>';
+    }
+    }  
+?>

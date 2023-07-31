@@ -1,0 +1,19 @@
+<?php
+/** @var \Perspective\Them7ex1\Block\Template $block */
+$viewModel = $block->getData('view_model');
+$order = $viewModel->getLast();
+ //var_dump($order->getData());
+echo "<b>Id заказа: </b>" . $order->getEntityId()."<br>";
+$orders = $order->loadByIncrementId($order->getIncrementId());
+$items = $orders->getItems();
+$product = array();
+foreach($items as $item){
+    echo "<b>Название продукта: </b>" . $item->getName()."<br>";
+}
+echo "<b>Способ доставки: </b>" . $order->getShippingMethod()."<br>"; // shippingm ehtod
+echo "<b>Способ оплаты: </b>" . $order->getPayment()->getData("method")."<br>";   // payment method
+echo "<b>Email покупателя: </b>" . $order->getCustomerEmail()."<br>";
+echo "<b>Фамилия покупателя: </b>" . $order->getCustomerLastname()."<br>";
+echo "<b>Имя покупателя: </b>" . $order->getCustomerFirstname()."<br>";
+
+    ?>
