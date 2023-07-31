@@ -1,0 +1,17 @@
+{
+    "name": "perspective/them10ex1",
+    "description": "",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+      "MIT"
+    ],
+    "autoload": {
+      "psr-4": {
+        "Perspective\\Them10ex1\\": ""
+      },
+      "files": [
+        "registration.php"
+      ]
+    }
+  }

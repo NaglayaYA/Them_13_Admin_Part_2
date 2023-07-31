@@ -1,8 +1,0 @@
-<?php
-
-/** @var \Perspective\Them7ex2\Block\Template $block */
-
-$viewModel = $block->getData('view_model');
-$quote = $viewModel->getCheckoutSession()->getQuote();
-$items = $quote->getData();
-var_dump($items);
