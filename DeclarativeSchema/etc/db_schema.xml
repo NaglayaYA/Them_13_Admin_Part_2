@@ -1,0 +1,17 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+        <table name="custom_table">
+
+               <column xsi:type="int" name="new_entity_id" padding="10" identity="true" unsigned="true" nullable="false" comment="New Entity Id"/>
+
+               <constraint xsi:type="primary" referenceId="PRIMARY" disabled="true"/>
+
+               <constraint xsi:type="primary" referenceId="NEW_PRIMARY">
+
+                       <column name="new_entity_id"/>
+
+               </constraint>
+
+        </table>
+
+</schema>

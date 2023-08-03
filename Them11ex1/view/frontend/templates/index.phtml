@@ -1,0 +1,34 @@
+<?php
+/** @var \Perspective\Them11ex1\Block\Template $block */
+
+$viewModel = $block->getData('view_model');
+$collection = $viewModel->getPostCollection();
+foreach ($collection as $item) {
+
+if ($item->getName() == 'Veronica Costello')
+{
+    echo "<pre>";
+    print_r($item->getData());
+    echo "</pre>";
+}
+/* if (substr($item->getDate(),-8) <= "11:00:00" && substr($item->getDate(),-8) >= "08:00:00" && $item->getGroup()=='Gold')
+{
+    echo ('<b>Consultation Price: </b>' .  (($item->getHours() * $item->getPrice())-($item->getHours() * $item->getPrice()) * (($item->getDiscount()*3))). '$'. '<br>' );
+} 
+elseif (substr($item->getDate(),-8) <= "11:00:00" && substr($item->getDate(),-8) >= "08:00:00")
+    {
+        echo ('<b>Consultation Price: </b>' .  (($item->getHours() * $item->getPrice())-($item->getHours() * $item->getPrice() * $item->getDiscount())).'$'. '<br>' );
+    }
+ elseif ($item->getGroup()=='Gold')
+{
+    echo ('<b>Consultation Price: </b>' .  (($item->getHours() * $item->getPrice())-($item->getHours() * $item->getPrice() * ($item->getDiscount()*2))) . '$' .  '<br>' );
+}
+ 
+else {
+    echo ('<b>Consultation Price: </b>' .  $item->getHours() * $item->getPrice() . '$' . '<br>' );
+} */
+echo '<hr>' ;
+}
+
+
+?>

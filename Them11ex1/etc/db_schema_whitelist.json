@@ -1,0 +1,15 @@
+{
+    "consultations": {
+        "column": {
+            "id": true,
+            "name": true,
+            "hours": true,
+            "date": true,
+            "customer": true,
+            "discount": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
