@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="perspective" translate="label" sortOrder="1000">
+            <label>Perspective</label>
+        </tab>
+        <section id="theme13ex2" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Theme 13 Ex 2</label>
+            <tab>perspective</tab>
+            <resource>Perspective_Theme13Ex2::helloworld_config</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enable" type="select" translate="label,comment,tooltip" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>perspective/general/enable</config_path>
+                </field>
+                <field id="XEquals" type="text" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>X = </label>
+                    <validate>required-entry</validate>
+                    <config_path>perspective/general/XEquals</config_path>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

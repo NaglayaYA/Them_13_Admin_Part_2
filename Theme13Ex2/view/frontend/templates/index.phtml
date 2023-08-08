@@ -1,0 +1,19 @@
+<?php
+/** @var \Perspective\Theme13Ex2\Block\Template $block */
+
+$viewModel = $block->getViewModel();
+
+$currentProduct = $viewModel->getCurrentProduct();
+
+$id = $currentProduct->getId();
+$_productStock = $viewModel->getStockItem($id);
+
+$y = $_productStock->getQty();
+if ($_productStock->getQty()<$viewModel->getX()){
+    echo '<b>Заканчивается</br>'. '</b>';
+    echo "<b> Осталось $y единиц </b>";
+
+}
+
+
+?>

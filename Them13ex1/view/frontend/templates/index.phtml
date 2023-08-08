@@ -1,0 +1,30 @@
+<?php
+/** @var \Perspective\Them13ex1\Block\Template $block */
+$viewModel = $block->getViewModel();
+$currentProduct = $viewModel->getCurrentProduct();
+$currentProduct->getFinalPrice();
+/* if ($currentProduct = $viewModel->getCurrentProduct()) {
+$currentProduct->getFinalPrice();
+}
+if ($viewModel->isEnabled()):
+    if ($viewModel->isUAN()=='Yes'){
+            echo '<b>Перевод в UAN: </b>' . $currentProduct->getFinalPrice()*$viewModel->getCourseUAN(). ' грн.' .'<br>';}
+    if ($viewModel->isEUR()=='Yes') {    
+            echo '<b>Перевод в EUR: </b>' . $currentProduct->getFinalPrice()*$viewModel->getCourseEUR(). ' €' .'<br>';}
+    if  ($viewModel->isEUR()=='Yes') {
+            echo '<b>Перевод в USD: </b>' . $currentProduct->getFinalPrice()*$viewModel->getCourseUSD(). ' $' .'<br>';}
+endif; */
+
+// Дополнительное задание
+
+$courseUAN = $viewModel->convertPrice($currentProduct->getFinalPrice(),'USD','UAH');
+
+echo('<b>Перевод в UAN: </b>' . $courseUAN . ' грн.' .'<br>');
+
+$courseUSD = $viewModel->convertPrice($currentProduct->getFinalPrice(),'USD','USD');
+
+echo('<b>Перевод в USD: </b>' . $courseUSD . ' $' .'<br>');
+
+$courseEUR = $viewModel->convertPrice($currentProduct->getFinalPrice(),'USD','EUR');
+
+echo('<b>Перевод в EUR: </b>' . $courseEUR . ' €' .'<br>');

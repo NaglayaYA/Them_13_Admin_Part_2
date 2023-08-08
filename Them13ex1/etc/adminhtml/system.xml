@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="perspective" translate="label" sortOrder="1000">
+            <label>Them13ex1</label>
+        </tab>
+        <section id="perspective" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Them13ex1</label>
+            <tab>perspective</tab>
+            <resource>Perspective_Them13ex1::perspective</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General</label>
+                <field id="enabled" type="select" translate="label" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>perspective/general/enabled</config_path>
+
+                </field>
+                <field id="uan" type="select" translate="label" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>UAN</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>perspective/general/uan</config_path>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+
+                </field>
+                <field id="courseuan" type="text" translate="label" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>CourseUAN</label>
+                    <validate>required-entry</validate>
+                    <config_path>perspective/general/courseuan</config_path>
+                    <depends>
+                        <field id="uan">1</field>
+                         <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="eur" type="select" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>EUR</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>perspective/general/eur</config_path>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+
+                </field>
+                <field id="courseeur" type="text" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>CourseEUR</label>
+                    <validate>required-entry</validate>
+                    <config_path>perspective/general/courseeur</config_path>
+                    <depends>
+                        <field id="eur">1</field>
+                         <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="usd" type="select" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>USD</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>perspective/general/usd</config_path>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+
+                </field>
+                <field id="courseusd" type="text" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>CourseUSD</label>
+                    <validate>required-entry</validate>
+                    <config_path>perspective/general/courseusd</config_path>
+                    <depends>
+                        <field id="usd">1</field>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
